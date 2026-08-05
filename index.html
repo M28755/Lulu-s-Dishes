@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Lulu's Delish - Authentic Swahili Flavors, Made with Love. Located along Narok Road, Majengo, Mombasa, Kenya." />
+    <title>Lulu's Delish | Authentic Swahili Cuisine in Mombasa</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+        integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- css link -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <button id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    <header class="navbar scrolled" id="navbar" aria-label="header">
+        <div class="nav-container container">
+            <a href="#hero" class="logo">
+                <span class="logo-accent">Lulu's</span> Delish
+            </a>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#hero" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#menu" class="nav-link">Menu</a>
+                <a href="#whyUs" class="nav-link">Why Us</a>
+
+                <a href="#testimonials" class="nav-link">Testimonials</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <!--  <a href="#map" class="nav-link">Location</a> -->
+                <!-- <a href="" class="nav-link">Events</a> -->
+                <a href="#contact" class="nav-link">Contact</a>
+
+            </nav>
+
+            <div class="nav-actions">
+
+                <button class="theme-toggle" id="themeToggole" aria-label="Toggle dark / light mode">
+
+                    <i class="fas fa-moon"></i>
+                </button>
+
+            </div>
+            <button id="cartBtn" class="cart-btn" aria-label="shopping cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cartCount" class="cart-badge">0</span>
+            </button>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Order Drawer -->
+    <div class="cart-overlay " id="cartOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer">
+
+        <div class="cart-header">
+            <h3><i class="fas fa-utensils"></i>Your Order</h3>
+            <button id="closeCart" class="close-cart">&times;</button>
+        </div>
+
+
+        <div class="cart-body" id="cartItems">
+
+            <p class="empty-cart-msg">Your basket is currently empty</p>
+
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>Total:</span>
+                <span id="cartTotal">KSh 0</span>
+            </div>
+            <!-- delivery details form -->
+            <form id="checkoutForm" class="checkout-form glassmorphism-form">
+                <h4><i class="fas fa-map-marker-alt"></i> Delivery Details</h4>
+
+                <div class="form-group">
+                    <input type="text" id="custName" placeholder="Your Full Name" required />
+                </div>
+
+                <div class="form-group">
+                    <input type="tel" id="custPhone" placeholder="Phone Number (e.g. 0758 644 293)" required />
+                </div>
+
+                <div class="form-group">
+                    <textarea id="custAddress" placeholder="Delivery Address / Nearby Landmark" rows="2"
+                        required></textarea>
+                </div>
+            </form>
+
+            <!-- Cart Actions -->
+            <button class="btn btn-primary btn-block" id="checkoutBtn">
+                Proceed to Checkout
+            </button>
+        </div>
+
+    </aside>
+
+
+    <main aria-label="Main content, Lulu shower case">
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-bg"></div>
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <span class="badge fade-in">Welcome to Majengo, Mombasa</span>
+                <h1 class="hero-title fade-in">Authentic Swahili Flavors,<br><span class="highlight">Made with
+                        Love.</span></h1>
+
+                <p class="hero-subtite fade-in">Experience coastal Kenya's rich culinary heritage through rich spices,
+                    fresh coconut infusions, and time-honored family recipes.</p>
+
+                <div class="hero-cta fade-in">
+                    <a href="#menu" class="btn btn-primary"><i class="fas fa-book-open"></i> View Menu</a>
+                    <a href="#contact" class="btn btn-outline"><i class="fas fa-motorcycle"></i> Order Now</a>
+                </div>
+
+                <div class="hero-quick-info fade-in">
+                    <div class="info-pill">
+                        <i class="fas fa-map marker-alt"></i>Narok Road, Majengo
+                    </div>
+
+                    <div class="info-pill">
+                        <i class="fas fa-clock"></i> Open 7:00 AM - 10:00 PM
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="about-section section-padding">
+            <div class="container grid-2">
+
+                <div class="about-image-wrapper reveal-left">
+                    <img src="./Photos/lulu-hero-section_LE_upscale_prime.jpg" alt="">
+                    <div class="experience-card glassmorphism">
+                        <span class="exp-number" data-target="10"></span>
+                        <p>Authentic Recipes</p>
+                    </div>
+                </div>
+                <div class="about-text reveal-right">
+                    <span class="sub-heading">Our Heritage</span>
+                    <h2 class="section-title">A Warm Family Table in the Heart of Mombasa</h2>
+                    <p class="lead-text">Lulu's Delish is built on a tradition of hospitality, coastal culture, and
+                        unforgettable flavors.</p>
+                    <p class="lead-text-2">Located along bustling Narok Road in Majengo, we bring families, friends, and
+                        visitors together over
+                        fragrant pilau, slow-cooked biryani, and handmade chapatis. Every dish is crafted with fresh
+                        local
+                        ingredients, home-ground spices, and genuine warmth.</p>
+
+                    <div class="about-features-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-heart"></i>
+
+                            <div>
+                                <h4>Family Restaurant</h4>
+                                <p>A cozy, inclusive space for all ages.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <i class="fas fa-leaf"></i>
+
+                            <div>
+                                <h4>Fresh Ingredients</h4>
+                                <p>Locally sourced produce and seafood daily.</p>
+                            </div>
+
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-smile"></i>
+
+                            <div>
+                                <h4>Friendly Staff</h4>
+                                <p>Authentic coastal hospitality (Karibu sana!).</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-wallet"></i>
+
+                            <div>
+                                <h4>Affordable Meals</h4>
+                                <p>Generous portions at family-friendly prices.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </section>
+
+        <!-- Menu section -->
+        <section class="menu-section section-padding bg-alt" id="menu">
+            <div class="container">
+                <div class="section-header text-center reveal-up">
+                    <span class="sub-heading">Digital Menu</span>
+                    <h2 class="section-title">Explore Our Delicious Offerings</h2>
+                    <p>Select your favorite dishes, filter by category, or search directly.</p>
+                </div>
+
+                <div class="menu-controls reveal-up">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" class="menu-search" id="menuSearch"
+                            placeholder="Search dishes (e.g. Biryani, Chapati, Juice)...">
+                    </div>
+
+                    <div class="category-filters" id="categoryFilters">
+                        <button class="filter-btn active" data-filter="all">All Dishes</button>
+                        <button class="filter-btn" data-filter="breakfast">Breakfast</button>
+                        <button class="filter-btn" data-filter="lunch">Lunch</button>
+                        <button class="filter-btn" data-filter="dinner">Dinner</button>
+                        <button class="filter-btn" data-filter="drinks">Drinks</button>
+                        <button class="filter-btn" data-filter="desserts">Desserts</button>
+                        <button class="filter-btn" data-filter="specials">Specials</button>
+                    </div>
+
+                </div>
+
+                <div class="menu-grid" id="menuGrid">
+                    <!-- Dynamic rendering menu -->
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Why Us section -->
+        <section id="whyUs" class="why-us-section section-padding">
+            <div class="container">
+                <div class="section-header text-center reveal-up">
+                    <span class="sub-heading">The Ulu's Difference</span>
+                    <h2 class="section-title">Why Choose Ulu's Delish</h2>
+                </div>
+
+                <div class="card-grid">
+                    <div class="feature-card glassmorphism reveal-up">
+                        <div class="card-icon"><i class="fas fa-carrot"></i></div>
+                        <h3>Fresh Ingredients</h3>
+                        <p>We source local produce, spices, and coastal catch daily to ensure maximum flavor and
+                            nutrition.</p>
+                    </div>
+
+                    <div class="feature-card glassmorphism reveal-up">
+                        <div class="card-icon"><i class="fas fa-pepper-hot"></i></div>
+                        <h3>Authentic Recipes</h3>
+                        <p>Generations-old Swahili cooking techniques preserved in every pot of pilau and biryani.</p>
+                    </div>
+
+                    <div class="feature-card glassmorphism reveal-up">
+                        <div class="card-icon"><i class="fas fa-users"></i></div>
+                        <h3>Family Friendly</h3>
+                        <p>Comfortable dining environment designed to make kids, parents, and friends feel right at
+                            home.</p>
+                    </div>
+
+                    <div class="feature-card glassmorphism reveal-up">
+                        <div class="card-icon"><i class="fas fa-tag"></i></div>
+                        <h3>Affordable Prices</h3>
+                        <p>High-quality meals designed to fit every budget without compromising on taste or portion
+                            size.</p>
+                    </div>
+
+                    <div class="feature-card glassmorphism reveal-up">
+                        <div class="card-icon"><i class="fas fa-shipping-fast"></i></div>
+                        <h3>Fast Delivery</h3>
+                        <p>Hot, well-packaged Swahili delights delivered straight to your home or office in Majengo &
+                            environs.</p>
+                    </div>
+
+                    <div class="feature-card glassmorphism reveal-up">
+                        <div class="card-icon"><i class="fas fa-concierge-bell"></i></div>
+                        <h3>Great Customer Service</h3>
+                        <p>Attentive, courteous, and prompt service with traditional Swahili hospitality.</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Testimonials sectio -->
+        <section class="reviews-section section-padding bg-alt" id="testimonials">
+            <div class="container">
+                <div class="section-header text-center reveal-up">
+                    <span class="sub-heading">Guest Feedback</span>
+                    <h2 class="section-title">What Our Customers Say</h2>
+                </div>
+
+                <div class="testimonial-slider-container reveal-up">
+
+                    <div class="testimonial-track" id="testimonialTrack">
+
+                        <div class="testimonial-card glassmorphism">
+                            <div class="stars">★★★★★</div>
+                            <p class="review-text">"The Swahili breakfast platter was amazing and incredibly filling.
+                                The mahamri was light and fresh, and the chai had just the right amount of spice!"</p>
+                            <div class="reviewer-info">
+                                <i class="fas fa-user-circle avatar"></i>
+                                <div>
+                                    <h4>Amina Hassan</h4>
+                                    <span>Local Resident</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card glassmorphism">
+                            <div class="stars">★★★★★</div>
+                            <p class="review-text">"Fresh food, friendly owner, and excellent service. The Chicken
+                                Biryani is hands down the best you will find along Narok Road!"</p>
+                            <div class="reviewer-info">
+                                <i class="fas fa-user-circle avatar"></i>
+                                <div>
+                                    <h4>David Omondi</h4>
+                                    <span>Food Enthusiast</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card glassmorphism">
+                            <div class="stars">★★★★★</div>
+                            <p class="review-text">"The mutton soup with chapati was unforgettable. Perfect spot for a
+                                family lunch after Friday prayers or weekend hangouts."</p>
+                            <div class="reviewer-info">
+                                <i class="fas fa-user-circle avatar"></i>
+                                <div>
+                                    <h4>Salim Said</h4>
+                                    <span>Frequent Visitor</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-controls">
+                        <button id="prevReview" aria-label="Previous Review"><i class="fas fa-arrow-left"></i></button>
+
+                        <div class="slider-dots" id="sliderDots"></div>
+
+                        <button id="nextReview" aria-label="Next Review"><i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Gallary Section -->
+        <section class="gallery-section section-padding" id="gallery">
+            <div class="conatainer">
+                <div class="section-header text-center reveal-up">
+                    <span class="sub-heading">Visual Showcase</span>
+                    <h2 class="section-title">A Glimpse of Ulu's Delish</h2>
+                    <p>Click any image to enlarge in full-screen view.</p>
+                </div>
+
+                <div class="gallery-masonry reveal-up">
+                    <div class="gallery-item">
+                        <img src="" alt="">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-p"></i>
+                            <span>Swahili Breakfast</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="" alt="">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-p"></i>
+                            <span>Swahili Breakfast</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="" alt="">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-p"></i>
+                            <span>Swahili Breakfast</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="" alt="">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-p"></i>
+                            <span>Swahili Breakfast</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="" alt="">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-p"></i>
+                            <span>Swahili Breakfast</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="" alt="">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-p"></i>
+                            <span>Swahili Breakfast</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="light-box" id="lightbox">
+            <span class="lightbox-close">&times;</span>
+
+            <img class="lightbox-content" id="lightboxImg" alt="Enlarged view">
+
+            <div id="lightboxCaption" class="lightbox-caption"></div>
+        </div>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section section-padding bg-alt">
+            <div class="container">
+                <div class="grid-2">
+                    <!-- info Bosx -->
+                    <div class="contact-info-card glassmorphism reveal-up">
+                        <span class="sub-heading">Find & Reach Us</span>
+                        <h2>Restaurant Info</h2>
+                        <p>Drop by for a delicious meal or contact us for quick takeaway and delivery.</p>
+
+                        <ul class="info-list">
+                            <li>
+                                <i class="fas fa-map-marked-alt"></i>
+                                <div>
+                                    <strong>Location:</strong>
+                                    <p>Narok Road, Majengo, Mombasa, Kenya</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-coins"></i>
+                                <div>
+                                    <strong>Price Range:</strong>
+                                    <p>KSh 500 – KSh 1,000 per person</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-concierge-bell"></i>
+                                <div>
+                                    <strong>Services Available:</strong>
+                                    <p>✔ Dine-in &nbsp;|&nbsp; ✔ Kerbside Pickup &nbsp;|&nbsp; ✔ Fast Delivery</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Opening Hours:</strong>
+                                    <p>Monday – Sunday: 7:00 AM – 10:00 PM</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <div>
+                                    <strong>Phone / Delivery Hotline:</strong>
+                                    <p><a href="tel:0707729549">0707 729549</a></p>
+                                </div>
+                            </li>
+
+                        </ul>
+                        <div class="contact-buttons">
+                            <a href="https://wa.me/254707729549?text=Hello%20Ulu's%20Delish,%20I%20would%20like%20to%20place%20an%20order."
+                                target="_blank" class="btn btn-whatsapp">
+                                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- Contact Form And Map -->
+                    <div class="contact-form-wrapper reveal-right">
+                        <form action="" id="contactForm" class="contact-form glassmorphi">
+                            <h3>Send Us a Messages</h3>
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" required placeholder="e.g. Omondi Michael">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" required placeholder="michael28755developer@gmail.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" placeholder="0758 644 293">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message / Reservation Query</label>
+                                <textarea id="message" rows="4" required placeholder="How can we help you?"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+
+
+                            <div id="formFeedback" class="form-feedback"></div>
+
+                        </form>
+
+                        <div class="map-conatainer rounded-glass" id="map">
+                            <iframe title="Ulu's Delish Location"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15919.261895311425!2d39.658000!3d-4.050000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x184012c4fa835339%3A0x899201f8fb5a2872!2sMajengo%2C%20Mombasa%2C%20Kenya!5e0!3m2!1sen!2ske!4v1680000000000!5m2!1sen!2ske"
+                                width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+        <div class="conatainer footer-content">
+
+
+            <div class="footer-brand">
+
+
+                <a href="#hero" class="logo"><span class="logo-accent">Lulu's</span>
+                    Delish</a>
+
+                <p>Authentic Swahili Flavors, Made with Love. Serving delicious meals in Majengo, Mombasa.</p>
+
+
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://wa.me/254707729549" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#menu">Digital Menu</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact & Map</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-hours">
+                <h4>Opening Hours</h4>
+                <p><strong>Monday – Sunday:</strong></p>
+                <p>7:00 AM – 10:00 PM</p>
+                <p class="footer-phone"><i class="fas fa-phone"></i> 0707 729549</p>
+            </div>
+
+        </div>
+        <div class="footer-bottom text-center">
+            <div class="container">
+                <p>&copy; <span id="year"></span> Lulu's Delish. All Rights Reserved. | Made with in Mombasa</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+</body>
+<script type="module" src="./JavaScript/script.js"></script>
+
+</html>
