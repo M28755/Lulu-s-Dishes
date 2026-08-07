@@ -204,8 +204,8 @@ h4 {
 .badge {
     display: inline-flex;
     padding: 6px 16px;
-    background: rgba(212, 175, 55, 0.2);
-    border: 1px solid var(--primary-gold);
+    background: none;
+    border: none;
     color: var(--primary-gold);
     border-radius: 30px;
     font-size: 0.85rem;
