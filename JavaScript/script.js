@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderMenu(dishesData)
     initCartDrawer()
     inittestimonialSlide()
+    initLightBox()
 })
 const navBar = document.getElementById('navbar');
 const themeToggle = document.getElementById('themeToggole')
@@ -497,5 +498,56 @@ const inittestimonialSlide = () =>{
         letSlide(currentIndex)
 
     },4000)
+}
+
+const initLightBox = () =>{
+    const lightBox = document.getElementById('lightbox');
+    const lightBoxImg = document.getElementById('lightboxImg');
+    const lightBoxCaption = document.getElementById('lightboxCaption')
+    const gallaryItem = document.querySelectorAll('.gallery-item')
+    const closeBtn = document.querySelector('.lightbox-close');
+
+
+    if(!lightBox || !lightBoxImg || !lightBoxCaption || !gallaryItem) return;
+
+gallaryItem.forEach((item) =>{
+    item.addEventListener('click', ()=>{
+        //accessing src and alt to the clicked image from gallery
+        const imgEl = item.querySelector('img');
+        const fullscreen = imgEl ? imgEl.src : "";  
+        const caption = imgEl ? imgEl.alt : "";
+       console.log(caption);
+
+       lightBoxImg.src = fullscreen;
+       lightBoxCaption.textContent = caption;
+
+       lightBox.classList.add('active');
+
+       document.body.style.overflow = 'hidden'
+
+
+    })
+
+})
+//function to close light box
+const closeLightBox = () =>{
+    lightBox.classList.remove('active');
+    document.body.style.overflow = '';
+}
+closeBtn.addEventListener('click', closeLightBox);
+// cloase light box if the overlay is clicked 
+lightBox.addEventListener('click', (e)=>{
+    if(e.target === lightBox){
+        closeLightBox();
+    }
+})
+
+//closing using  esc key
+
+document.addEventListener('keydown', () =>{
+    if(e.key && lightBox.classList.contains('active')){
+        closeLightBox()
+    }
+})
 }
 

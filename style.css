@@ -794,15 +794,17 @@ h4 {
 
 /* ==============Gallery nd lightbox */
 .gallery-masonry{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px , 1fr));
-    gap: 20x;
+   display: grid;
+   grid-template-columns: repeat(auto-fit , minmax(280px, 1fr));
+    gap: 16px;
+   
 }
 .gallery-item{
     position: relative;
     border-radius: var(--radius-md);
     overflow: hidden;
-    height: 20px;
+
+
     cursor: pointer;
 }
 .gallery-item img{
@@ -810,6 +812,7 @@ h4 {
     height: 100%;
     object-fit: cover;
     transition: transform 0.8s ease;
+    
 }
 .gallery-overlay{
     position: absolute;
@@ -840,7 +843,7 @@ h4 {
     top: 0;
     left: 0px;
     width: 100%;
-    height: 100px;
+    height:100%;
     background: rgba(0, 0, 0, 0.9);
     align-items: center;
     justify-content: center;
@@ -1249,7 +1252,7 @@ h4 {
 }
 
 @media (max-width:768px) {
-  /*   .category-filters{
+    .category-filters{
         display: flex;
         flex-wrap: nowrap;
         justify-content: flex-start;
@@ -1273,6 +1276,6 @@ h4 {
         white-space: nowrap;
         padding: 10px 18px;
         font-size: 14px;
-    } */
+    }
 
 }
