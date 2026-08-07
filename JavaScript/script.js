@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initThemeToggle()
     renderMenu(dishesData)
     initCartDrawer()
+    inittestimonialSlide()
 })
 const navBar = document.getElementById('navbar');
 const themeToggle = document.getElementById('themeToggole')
@@ -142,16 +143,16 @@ const initThemeToggle =() =>{
 
      const saveTheme = localStorage.getItem("Lulus_theme")|| 'light';
      document.documentElement.setAttribute('data-theme', saveTheme)
-      updateThemeIcon(saveTheme, icon);
-
+      
       themeToggle.addEventListener('click', () =>{
         const currentTheme = document.documentElement.getAttribute('data-theme')
        const newTheme = currentTheme === "light" ? "dark" :"light";
+       updateThemeIcon(newTheme, icon)
 
           document.documentElement.setAttribute("data-theme", newTheme)
           
           localStorage.setItem("lulus_theme", JSON.stringify(newTheme))
-          console.log(JSON.parse(localStorage.getItem('lulus_theme')))
+        //  console.log(JSON.parse(localStorage.getItem('lulus_theme')))
       })
     
    
@@ -389,7 +390,7 @@ const checkoutWhatsApp =()=>{
              alert("Please fill in your name, phone number, and delivery address before sending your order.");
     return
   }
-
+ //decoding the message according to individual customer
   let message = `*NEW ORDER - Lulu's Delish*\n\n`;
   message += `*Customer Details:*\n`;
   message += `• Name: ${customerName}\n`;
@@ -436,5 +437,65 @@ const resetCheckOutState = ()=>{
     if(checkOutForm){
         checkOutForm.classList.remove('active');
     }
+}
+
+const inittestimonialSlide = () =>{
+   
+    const track = document.getElementById('testimonialTrack');
+    const card = track.querySelectorAll('.testimonial-card');
+    const previousBtn = document.getElementById('prevReview');
+    const nextBtn = document.getElementById('nextReview');
+    const dotContainer = document.getElementById('sliderDots')
+
+    let currentIndex = 0;
+    let total = card.length;
+
+    if(total === 0)return;
+    //console.log(total)
+
+    dotContainer.innerHTML = '';
+    //creating dot acconding to numbers of testimonial slides
+    for(let i = 0; i < total;i++){
+        const dot = document.createElement('div');
+        dot.className = `dot ${i === 0? "active": ""}`;
+
+        dot.addEventListener('click', ()=> letSlide(i));
+
+           dotContainer.appendChild(dot)
+    }
+   
+    //testimonial slide function
+    const letSlide = (index) =>{
+        currentIndex = index;
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+          
+      const  dots = dotContainer.querySelectorAll('.dot');
+       //looping through every dot to set it active
+        dots.forEach((dot, index) =>{
+            dot.classList.toggle('active', index === currentIndex)
+        })
+    }
+    //next button logic
+    nextBtn.addEventListener('click', ()=>{
+        currentIndex = (currentIndex + 1) % total;
+        console.log(currentIndex);
+
+        letSlide(currentIndex);
+    })
+    //previous button logic
+    previousBtn.addEventListener('click', ()=>{
+        currentIndex = (currentIndex - 1 + total) % total;
+       // console.log(currentIndex)
+        
+        letSlide(currentIndex)
+    })
+
+    //allowing auto sliding after every 4 seconds
+    setInterval(()=>{
+        currentIndex = (currentIndex + 1 ) % total;
+
+        letSlide(currentIndex)
+
+    },4000)
 }
 
