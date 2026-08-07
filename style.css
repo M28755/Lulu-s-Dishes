@@ -1252,7 +1252,7 @@ h4 {
 }
 
 @media (max-width:768px) {
-    .category-filters{
+   /*  .category-filters{
         display: flex;
         flex-wrap: nowrap;
         justify-content: flex-start;
@@ -1278,4 +1278,5 @@ h4 {
         font-size: 14px;
     }
 
+ */
 }
